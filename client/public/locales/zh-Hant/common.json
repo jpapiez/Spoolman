@@ -29,7 +29,9 @@
         "showArchived": "檢視已封存",
         "notAccessTitle": "您沒有存取的權限",
         "hideColumns": "隱藏欄",
-        "clearFilters": "清除篩選"
+        "clearFilters": "清除篩選",
+        "min": "最小",
+        "max": "最大"
     },
     "warnWhenUnsavedChanges": "您確定要離開嗎？您尚有未儲存的變更。",
     "notifications": {
@@ -44,7 +46,9 @@
         "editError": "編輯 {{resource}} 時發生錯誤（狀態碼：{{statusCode}}）",
         "importProgress": "匯入中：{{processed}}/{{total}}",
         "saveSuccessful": "儲存成功！",
-        "validationError": "驗證錯誤： {{error}}"
+        "validationError": "驗證錯誤： {{error}}",
+        "selectAtLeastOne": "請至少選擇一種耗材。",
+        "filaments": "耗材"
     },
     "kofi": "在Ko-fi上打賞我",
     "loading": "讀取中",
@@ -381,6 +385,32 @@
             "description": "<p>在此，您可以為您的實體加入額外的自訂欄位。</p><p>一旦加入欄位，您將無法更改其鍵值或類型，對於選擇類型欄位，您也無法刪除選項或更改多選狀態。如果刪除欄位，所有實體的相關資料將被刪除。</p><p>鍵值是其他程式讀取/寫入資料的方式，因此如果您的自訂欄位需要與第三方程式整合，請確保正確設置。預設值僅適用於新品項。</p><p>額外的欄位無法在表格視圖中排序或過濾。</p>",
             "non_unique_key_error": "鍵值必須為唯一。",
             "delete_confirm_description": "這將刪除該欄位及所有與之關聯的所有實體資料。"
+        },
+        "importexport": {
+                    "tab": "匯入/匯出",
+                    "export": {
+                        "title": "匯出資料",
+                        "description": "將您的資料匯出為檔案以便備份或資料分析。選擇格式（CSV 或 JSON），然後按匯出按鈕下載您想要的資料。",
+                        "format": "匯出格式",
+                        "spools": "匯出料盤",
+                        "filaments": "匯出耗材",
+                        "vendors": "匯出製造商",
+                        "export": "匯出"
+                    },
+                    "import": {
+                        "title": "匯入資料",
+                        "description": "從先前匯出的 CSV 或 JSON 檔案匯入資料。為您想匯入的每種資源類型選擇一個檔案。",
+                        "selectFile": "選擇檔案",
+                        "spools": "匯入料盤",
+                        "filaments": "匯入耗材",
+                        "vendors": "匯入製造商"
+                    },
+                    "bulkImportFilaments": {
+                        "title": "大量匯入耗材",
+                        "description": "從外部資料庫選取多個耗材，以一次匯入這些耗材。",
+                        "noResults": "所有可用耗材已被匯入，或不符合您的篩選條件。",
+                        "noFilaments": "找不到耗材"
+                    }
         }
     },
     "locations": {

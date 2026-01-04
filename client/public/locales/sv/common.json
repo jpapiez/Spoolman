@@ -29,7 +29,9 @@
         "hideColumns": "Dölj kolumner",
         "clearFilters": "Rensa filter",
         "saveAndAdd": "Spara och Lägg till",
-        "continue": "Fortsätt"
+        "continue": "Fortsätt",
+        "min": "Min",
+        "max": "Max"
     },
     "warnWhenUnsavedChanges": "Är du säker på att du vill lämna sidan? Du har osparade ändringar.",
     "notifications": {
@@ -44,7 +46,9 @@
         "editError": "Det gick inte att ändra {{resource}} (statuskod: {{statusCode}})",
         "importProgress": "Importerar: {{processed}}/{{total}}",
         "saveSuccessful": "Sparning lyckades!",
-        "validationError": "Valideringsfel: {{error}}"
+        "validationError": "Valideringsfel: {{error}}",
+        "selectAtLeastOne": "Vänligen välj minst ett filament.",
+        "filaments": "Filament"
     },
     "loading": "Laddar",
     "version": "Version",
@@ -337,6 +341,32 @@
             "delete_confirm": "Ta bort fältet {{name}}?",
             "non_unique_key_error": "Nyckeln måste vara unik.",
             "key_not_changed": "Vänligen ändra nyckeln till något annat."
+        },
+        "importexport": {
+            "tab": "Import/Export",
+            "export": {
+                "title": "Exportera data",
+                "description": "Exportera dina data till en fil för säkerhetskopiering eller dataanalys. Välj format (CSV eller JSON) och klicka på exportknappen för den data du vill ladda ner.",
+                "format": "Exportformat",
+                "spools": "Exportera spolar",
+                "filaments": "Exportera filament",
+                "vendors": "Exportera tillverkare",
+                "export": "Exportera"
+            },
+            "import": {
+                "title": "Importera data",
+                "description": "Importera data från tidigare exporterade CSV- eller JSON-filer. Välj en fil för varje resurstyp du vill importera.",
+                "selectFile": "Välj fil",
+                "spools": "Importera spolar",
+                "filaments": "Importera filament",
+                "vendors": "Importera tillverkare"
+            },
+            "bulkImportFilaments": {
+                "title": "Massimport av filament",
+                "description": "Välj flera filament från den externa databasen för att importera dem alla på en gång.",
+                "noResults": "Alla tillgängliga filament har redan importerats eller matchar inte dina filter.",
+                "noFilaments": "Inga filament hittades"
+            }
         }
     },
     "documentTitle": {

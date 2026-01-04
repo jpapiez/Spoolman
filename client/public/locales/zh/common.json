@@ -29,7 +29,9 @@
         "hideColumns": "隐藏列",
         "clearFilters": "清除筛选器",
         "saveAndAdd": "保存并添加",
-        "continue": "继续"
+        "continue": "继续",
+        "min": "最小",
+        "max": "最大"
     },
     "warnWhenUnsavedChanges": "您确定要离开吗？您有未保存的更改。",
     "notifications": {
@@ -44,7 +46,9 @@
         "editError": "修改 {{resource}} 时出现错误 (状态码：{{statusCode}})",
         "importProgress": "导入中： {{processed}}/{{total}}",
         "saveSuccessful": "保存成功！",
-        "validationError": "校验错误：{{error}}"
+        "validationError": "校验错误：{{error}}",
+        "selectAtLeastOne": "请选择至少一个耗材。",
+        "filaments": "耗材"
     },
     "loading": "加载中",
     "version": "版本",
@@ -396,6 +400,32 @@
             "round_prices": {
                 "label": "取整",
                 "tooltip": "将价格四舍五入到最接近的整数。"
+            }
+        },
+        "importexport": {
+            "tab": "导入/导出",
+            "export": {
+                "title": "导出数据",
+                "description": "将您的数据导出到文件以便备份或数据分析。选择格式（CSV 或 JSON），然后点击导出按钮下载所需的数据。",
+                "format": "导出格式",
+                "spools": "导出料盘",
+                "filaments": "导出耗材",
+                "vendors": "导出制造商",
+                "export": "导出"
+            },
+            "import": {
+                "title": "导入数据",
+                "description": "从先前导出的 CSV 或 JSON 文件中导入数据。为要导入的每种资源类型选择一个文件。",
+                "selectFile": "选择文件",
+                "spools": "导入料盘",
+                "filaments": "导入耗材",
+                "vendors": "导入制造商"
+            },
+            "bulkImportFilaments": {
+                "title": "批量导入耗材",
+                "description": "从外部数据库中选择多个耗材以一次性导入它们。",
+                "noResults": "所有可用的耗材已被导入或不符合您的筛选条件。",
+                "noFilaments": "未找到耗材"
             }
         }
     },

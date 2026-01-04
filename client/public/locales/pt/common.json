@@ -29,7 +29,9 @@
         "clearFilters": "Limpar Filtros",
         "create": "Criar",
         "saveAndAdd": "Guardar e Adicionar",
-        "continue": "Continuar"
+        "continue": "Continuar",
+        "min": "Min",
+        "max": "Máx"
     },
     "warnWhenUnsavedChanges": "Tem certeza de que quer sair? Tem alterações não guardadas.",
     "notifications": {
@@ -44,7 +46,9 @@
         "editError": "Erro ao editar {{resource}} (código de status: {{statusCode}})",
         "importProgress": "Importando: {{processed}}/{{total}}",
         "saveSuccessful": "Guardado com sucesso!",
-        "validationError": "Erro de validação: {{error}}"
+        "validationError": "Erro de validação: {{error}}",
+        "selectAtLeastOne": "Por favor selecione pelo menos um filamento.",
+        "filaments": "Filamento(s)"
     },
     "kofi": "Doe no Ko-fi",
     "loading": "Carregando",
@@ -400,6 +404,32 @@
             "round_prices": {
                 "tooltip": "Arredonda os preços para o número inteiro mais próximo.",
                 "label": "Arredondar preços"
+            }
+        },
+        "importexport": {
+            "tab": "Importar/Exportar",
+            "export": {
+                "title": "Exportar dados",
+                "description": "Exporte os seus dados para um ficheiro para backup ou análise de dados. Selecione o formato (CSV ou JSON) e clique no botão de exportação para os dados que pretende descarregar.",
+                "format": "Formato de exportação",
+                "spools": "Exportar bobines",
+                "filaments": "Exportar filamentos",
+                "vendors": "Exportar fabricantes",
+                "export": "Exportar"
+            },
+            "import": {
+                "title": "Importar dados",
+                "description": "Importe dados de ficheiros CSV ou JSON previamente exportados. Selecione um ficheiro para cada tipo de recurso que pretende importar.",
+                "selectFile": "Selecionar ficheiro",
+                "spools": "Importar bobines",
+                "filaments": "Importar filamentos",
+                "vendors": "Importar fabricantes"
+            },
+            "bulkImportFilaments": {
+                "title": "Importação em massa de filamentos",
+                "description": "Selecione vários filamentos da base de dados externa para os importar de uma só vez.",
+                "noResults": "Todos os filamentos disponíveis já foram importados ou não correspondem aos seus filtros.",
+                "noFilaments": "Nenhum filamento encontrado"
             }
         }
     },

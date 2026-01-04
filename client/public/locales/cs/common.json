@@ -29,7 +29,9 @@
         "hideColumns": "Skrýt sloupce",
         "clearFilters": "Vypnout filtry",
         "saveAndAdd": "Uložit a přidat",
-        "continue": "Pokračovat"
+        "continue": "Pokračovat",
+        "min": "Min",
+        "max": "Max"
     },
     "warnWhenUnsavedChanges": "Jste si jisti, že chcete odejít? Máte neuložené změny.",
     "notifications": {
@@ -44,7 +46,9 @@
         "editError": "Chyba při úpravě {{resource}} (status code: {{statusCode}})",
         "importProgress": "Importování: {{processed}}/{{total}}",
         "saveSuccessful": "Úspěšně uloženo!",
-        "validationError": "Chyba ověření: {{error}}"
+        "validationError": "Chyba ověření: {{error}}",
+        "selectAtLeastOne": "Vyberte alespoň jedno vlákno.",
+        "filaments": "Vlákno/vlákna"
     },
     "loading": "Načítání",
     "version": "Verze",
@@ -399,6 +403,32 @@
             "round_prices": {
                 "label": "Zaokrouhlené ceny",
                 "tooltip": "Zaokrouhlete ceny na nejbližší celé číslo."
+            }
+        },
+        "importexport": {
+            "tab": "Import/Export",
+            "export": {
+                "title": "Exportovat data",
+                "description": "Exportujte svá data do souboru pro zálohování nebo analýzu dat. Vyberte formát (CSV nebo JSON) a klikněte na tlačítko export pro data, která chcete stáhnout.",
+                "format": "Formát exportu",
+                "spools": "Exportovat cívky",
+                "filaments": "Exportovat vlákna",
+                "vendors": "Exportovat výrobce",
+                "export": "Exportovat"
+            },
+            "import": {
+                "title": "Importovat data",
+                "description": "Importujte data z dříve exportovaných souborů CSV nebo JSON. Vyberte soubor pro každý typ prostředku, který chcete importovat.",
+                "selectFile": "Vybrat soubor",
+                "spools": "Importovat cívky",
+                "filaments": "Importovat vlákna",
+                "vendors": "Importovat výrobce"
+            },
+            "bulkImportFilaments": {
+                "title": "Hromadný import vláken",
+                "description": "Vyberte více vláken z externí databáze a importujte je všechny najednou.",
+                "noResults": "Všechna dostupná vlákna již byla importována nebo neodpovídají vašim filtrům.",
+                "noFilaments": "Nebyla nalezena vlákna"
             }
         },
         "settings": "Nastavení"

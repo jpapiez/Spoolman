@@ -29,7 +29,9 @@
         "hideArchived": "Archivierte verstecken",
         "unArchive": "Archivieren rückgängig machen",
         "saveAndAdd": "Speichern und hinzufügen",
-        "continue": "Weiter"
+        "continue": "Weiter",
+        "min": "Min",
+        "max": "Max"
     },
     "warnWhenUnsavedChanges": "Sicher? Es sind nicht gespeicherte Änderungen vorhanden.",
     "notifications": {
@@ -44,7 +46,9 @@
         "editError": "Fehler beim bearbeiten von {{resource}} (status code: {{statusCode}})",
         "importProgress": "{{processed}}/{{total}} importiert",
         "saveSuccessful": "Erfolgreich gespeichert!",
-        "validationError": "Validierungsfehler: {{error}}"
+        "validationError": "Validierungsfehler: {{error}}",
+        "selectAtLeastOne": "Bitte wählen Sie mindestens ein Filament aus.",
+        "filaments": "Filament(e)"
     },
     "loading": "Läd",
     "version": "Version",
@@ -400,7 +404,33 @@
             "delete_confirm_description": "Dieses Feld und alle damit verbundenen Einträge werden gelöscht.",
             "non_unique_key_error": "Der Schlüssel muss einzigartig sein."
         },
-        "settings": "Einstellungen"
+        "settings": "Einstellungen",
+        "importexport": {
+            "tab": "Import/Export",
+            "export": {
+                "title": "Daten exportieren",
+                "description": "Exportieren Sie Ihre Daten in eine Datei zur Sicherung oder Analyse. Wählen Sie ein Format (CSV oder JSON) und klicken Sie auf Exportieren, um die gewünschten Daten herunterzuladen.",
+                "format": "Exportformat",
+                "spools": "Spulen exportieren",
+                "filaments": "Filamente exportieren",
+                "vendors": "Hersteller exportieren",
+                "export": "Exportieren"
+            },
+            "import": {
+                "title": "Daten importieren",
+                "description": "Importieren Sie Daten aus zuvor exportierten CSV- oder JSON-Dateien. Wählen Sie eine Datei pro Ressourcentyp, den Sie importieren möchten.",
+                "selectFile": "Datei auswählen",
+                "spools": "Spulen importieren",
+                "filaments": "Filamente importieren",
+                "vendors": "Hersteller importieren"
+            },
+            "bulkImportFilaments": {
+                "title": "Filamente stapelweise importieren",
+                "description": "Wählen Sie mehrere Filamente aus der externen Datenbank, um sie auf einmal zu importieren.",
+                "noResults": "Alle verfügbaren Filamente wurden bereits importiert oder entsprechen nicht Ihren Filtern.",
+                "noFilaments": "Keine Filamente gefunden"
+            }
+        }
     },
     "locations": {
         "no_location": "Kein Ort",

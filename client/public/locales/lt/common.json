@@ -29,7 +29,9 @@
         "showArchived": "Rodyti archyvuotus",
         "notAccessTitle": "Nepakanka teisių",
         "hideColumns": "Slėpti stulpelius",
-        "clearFilters": "Valyti filtrus"
+        "clearFilters": "Valyti filtrus",
+        "min": "Min",
+        "max": "Maks"
     },
     "warnWhenUnsavedChanges": "Ar tikrai norite išeiti? Yra neišsaugotų pakeitimų.",
     "notifications": {
@@ -44,7 +46,9 @@
         "editError": "Redagavimo klaida {{resource}} (kodas: {{statusCode}})",
         "importProgress": "Importuojama: {{processed}}/{{total}}",
         "saveSuccessful": "Įrašytaa sėkmingai!",
-        "validationError": "Tikrinimo klaida: {{error}}"
+        "validationError": "Tikrinimo klaida: {{error}}",
+        "selectAtLeastOne": "Pasirinkite bent vieną siūlą.",
+        "filaments": "Siūlas/siūlai"
     },
     "kofi": "Paremk mane Ko-fi",
     "loading": "Kraunasi",
@@ -355,6 +359,32 @@
             "key_not_changed": "Prašome pakeisti raktą į ką nors kitą.",
             "delete_confirm": "Šalinti lauką {{name}}?",
             "delete_confirm_description": "Tai ištrins lauką ir visus susijusius duomenis visiems objektams."
+        },
+        "importexport": {
+            "tab": "Importavimas/Eksportavimas",
+            "export": {
+                "title": "Eksportuoti duomenis",
+                "description": "Eksportuokite duomenis į failą, skirtą atsargai arba duomenų analizei. Pasirinkite formatą (CSV arba JSON) ir spustelėkite eksportavimo mygtuką duomenims, kuriuos norite atsisiųsti.",
+                "format": "Eksportavimo formatas",
+                "spools": "Eksportuoti ritės",
+                "filaments": "Eksportuoti siūlus",
+                "vendors": "Eksportuoti gamintojus",
+                "export": "Eksportuoti"
+            },
+            "import": {
+                "title": "Importuoti duomenis",
+                "description": "Importuokite duomenis iš anksčiau eksportuotų CSV arba JSON failų. Pasirinkite failą kiekvienam šaltinio tipui, kurį norite importuoti.",
+                "selectFile": "Pasirinkti failą",
+                "spools": "Importuoti ritės",
+                "filaments": "Importuoti siūlus",
+                "vendors": "Importuoti gamintojus"
+            },
+            "bulkImportFilaments": {
+                "title": "Masinis siūlų importas",
+                "description": "Pasirinkite kelis siūlus iš išorinės duomenų bazės ir importuokite juos vienu metu.",
+                "noResults": "Visi prieinami siūlai jau importuoti arba neatitinka jūsų filtrų.",
+                "noFilaments": "Siūlų nerasta"
+            }
         }
     },
     "documentTitle": {

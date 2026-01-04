@@ -22,7 +22,9 @@
         "clone": "Klonen",
         "clear": "Wissen",
         "saveAndAdd": "Opslaan en Toevoegen",
-        "continue": "Doorgaan"
+        "continue": "Doorgaan",
+        "min": "Min",
+        "max": "Max"
     },
     "actions": {
         "create": "Aanmaken",
@@ -132,7 +134,9 @@
         "deleteError": "Fout opgetreden bij het verwijderen van {{resource}} (status code {{statusCode}})",
         "createSuccess": "{{resource}} succesvol aangemaakt",
         "saveSuccessful": "Succesvol opgeslagen!",
-        "validationError": "Validatie error: {{error}}"
+        "validationError": "Validatie error: {{error}}",
+        "selectAtLeastOne": "Selecteer alstublieft minstens één filament.",
+        "filaments": "Filament(en)"
     },
     "no": "Nee",
     "unknown": "Onbekend",
@@ -398,7 +402,33 @@
             "delete_confirm_description": "Hierdoor worden het veld en alle bijbehorende gegevens voor alle entiteiten verwijderd.",
             "description": "<p>Hier kunt u extra aangepaste velden toevoegen aan uw entiteiten.</p><p>Zodra een veld is toegevoegd, kunt u de key of het type ervan niet wijzigen, en voor velden met keuzetypes kunt u geen keuzes verwijderen of de meervoudige velden wijzigen. Als u een veld verwijdert, worden de bijbehorende gegevens voor alle entiteiten verwijderd.</p><p>De key is hoe andere programma's de gegevens lezen/schrijven, dus of uw aangepaste veld moet worden geïntegreerd met een derde partij programma, zorg ervoor dat u het correct instelt. De standaardwaarde wordt alleen toegepast op nieuwe items.</p><p>Extra velden kunnen niet worden gesorteerd of gefilterd in de tabelweergaven.</p>"
         },
-        "settings": "Instellingen"
+        "settings": "Instellingen",
+        "importexport": {
+            "tab": "Import/Export",
+            "export": {
+                "title": "Gegevens exporteren",
+                "description": "Exporteer uw gegevens naar een bestand voor backup of data-analyse. Kies het formaat (CSV of JSON) en klik op de exportknop voor de gegevens die u wilt downloaden.",
+                "format": "Exportformaat",
+                "spools": "Spoelen exporteren",
+                "filaments": "Filamenten exporteren",
+                "vendors": "Fabrikanten exporteren",
+                "export": "Exporteren"
+            },
+            "import": {
+                "title": "Gegevens importeren",
+                "description": "Importeer gegevens uit eerder geëxporteerde CSV- of JSON-bestanden. Kies een bestand voor elk type resource dat u wilt importeren.",
+                "selectFile": "Bestand selecteren",
+                "spools": "Spoelen importeren",
+                "filaments": "Filamenten importeren",
+                "vendors": "Fabrikanten importeren"
+            },
+            "bulkImportFilaments": {
+                "title": "Bulk import filamenten",
+                "description": "Selecteer meerdere filamenten uit de externe database om ze in één keer te importeren.",
+                "noResults": "Alle beschikbare filamenten zijn al geïmporteerd of komen niet overeen met uw filters.",
+                "noFilaments": "Geen filamenten gevonden"
+            }
+        }
     },
     "locations": {
         "no_location": "Geen locatie",

@@ -22,7 +22,9 @@
         "refresh": "Gjenoppfrisk",
         "notAccessTitle": "Du har ikke rettighet til å få tilgang",
         "saveAndAdd": "Lagre og legg til",
-        "continue": "Fortsett"
+        "continue": "Fortsett",
+        "min": "Min",
+        "max": "Maks"
     },
     "filament": {
         "fields": {
@@ -294,7 +296,9 @@
         "deleteError": "Kunne ikke slette {{resource}} (statuskode: {{statusCode}})",
         "createSuccess": "Opprettet {{resource}}",
         "saveSuccessful": "Lagring vellykket!",
-        "validationError": "Valideringsfeil: {{error}}"
+        "validationError": "Valideringsfeil: {{error}}",
+        "selectAtLeastOne": "Vennligst velg minst ett filament.",
+        "filaments": "Filament(er)"
     },
     "loading": "Laster",
     "documentTitle": {
@@ -406,6 +410,32 @@
             "key_not_changed": "Nøkkelen kan ikke endres.",
             "delete_confirm": "Slette felt {{name}}?",
             "delete_confirm_description": "Dette vil fjerne feltet permanent fra systemet."
+        },
+        "importexport": {
+            "tab": "Importer/Eksporter",
+            "export": {
+                "title": "Eksporter data",
+                "description": "Eksporter data til en fil for backup eller dataanalyse. Velg format (CSV eller JSON) og klikk på eksporter-knappen for de dataene du ønsker å laste ned.",
+                "format": "Eksporteringsformat",
+                "spools": "Eksporter spoler",
+                "filaments": "Eksporter filamenter",
+                "vendors": "Eksporter produsenter",
+                "export": "Eksporter"
+            },
+            "import": {
+                "title": "Importer data",
+                "description": "Importer data fra tidligere eksporterte CSV- eller JSON-filer. Velg en fil for hver ressurstype du ønsker å importere.",
+                "selectFile": "Velg fil",
+                "spools": "Importer spoler",
+                "filaments": "Importer filamenter",
+                "vendors": "Importer produsenter"
+            },
+            "bulkImportFilaments": {
+                "title": "Bulkimport filamenter",
+                "description": "Velg flere filamenter fra den eksterne databasen for å importere dem alle på en gang.",
+                "noResults": "Alle tilgjengelige filamenter er allerede importert eller samsvarer ikke med filtrene dine.",
+                "noFilaments": "Ingen filamenter funnet"
+            }
         }
     }
 }

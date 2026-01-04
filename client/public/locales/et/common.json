@@ -29,7 +29,9 @@
         "unArchive": "Võta arhiivist tagasi",
         "hideArchived": "Peida arhiveeritud",
         "showArchived": "Näita arhiveeritud",
-        "continue": "Jätka"
+        "continue": "Jätka",
+        "min": "Min",
+        "max": "Maks"
     },
     "notifications": {
         "error": "Viga (kood: {{statusCode}})",
@@ -43,7 +45,9 @@
         "editError": "Viga {{resource}} muutmisel (staatuse kood: {{statusCode}})",
         "importProgress": "Importimine: {{processed}}/{{total}}",
         "saveSuccessful": "Salvesta edukalt!",
-        "validationError": "Viga validerimisel: {{error}}"
+        "validationError": "Viga validerimisel: {{error}}",
+        "selectAtLeastOne": "Valige vähemalt üks filament.",
+        "filaments": "Filament(id)"
     },
     "warnWhenUnsavedChanges": "Oled sa kindel, et soovid lahkuda? Sul on salvestamata muudatusi.",
     "kofi": "Anna mulle tippi Ko-fi's",
@@ -62,5 +66,35 @@
         "generic": {
             "title": "Trükkib"
         }
+    },
+    "settings": {
+        "header": "Seaded",
+        "importexport": {
+            "tab": "Import/Eksport",
+            "export": {
+                "title": "Andmete eksportimine",
+                "description": "Eksportige oma andmed faili varundamiseks või andmete analüüsimiiseks. Valige vorming (CSV või JSON) ja klõpsake ekspordi nupul andmete jaoks, mida soovite alla laadida.",
+                "format": "Ekspordi vorming",
+                "spools": "Ekspordi suklid",
+                "filaments": "Ekspordi filamendid",
+                "vendors": "Ekspordi tootjad",
+                "export": "Eksport"
+            },
+            "import": {
+                "title": "Andmete importimine",
+                "description": "Importige andmeid varem eksporditud CSV- või JSON-failidest. Valige fail iga ressursi tüübi jaoks, mida soovite importida.",
+                "selectFile": "Valige fail",
+                "spools": "Importi suklid",
+                "filaments": "Importi filamendid",
+                "vendors": "Importi tootjad"
+            },
+            "bulkImportFilaments": {
+                "title": "Filamentide hulgiimport",
+                "description": "Valige mitmed filamendid väliandmebaasist, et importida need kõik korraga.",
+                "noResults": "Kõik saadaolevad filamendid on juba imporditud või ei vasta teie filtritele.",
+                "noFilaments": "Filamente ei leitud"
+            }
+        },
+        "settings": "Seaded"
     }
 }

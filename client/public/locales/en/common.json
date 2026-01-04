@@ -29,7 +29,9 @@
         "showArchived": "Show Archived",
         "notAccessTitle": "You don't have permission to access",
         "hideColumns": "Hide Columns",
-        "clearFilters": "Clear Filters"
+        "clearFilters": "Clear Filters",
+        "min": "Min",
+        "max": "Max"
     },
     "warnWhenUnsavedChanges": "Are you sure you want to leave? You have unsaved changes.",
     "notifications": {
@@ -44,7 +46,14 @@
         "editError": "Error when editing {{resource}} (status code: {{statusCode}})",
         "importProgress": "Importing: {{processed}}/{{total}}",
         "saveSuccessful": "Save successful!",
-        "validationError": "Validation error: {{error}}"
+        "validationError": "Validation error: {{error}}",
+        "exportSuccessful": "Export successful!",
+        "exportFailed": "Export failed. Please try again.",
+        "importSuccessful": "{{count}} items imported successfully!",
+        "importFailed": "Import failed. Please try again.",
+        "invalidFileType": "Invalid file type. Please use CSV or JSON files.",
+        "selectAtLeastOne": "Please select at least one filament.",
+        "filaments": "Filament(s)"
     },
     "kofi": "Tip me on Ko-fi",
     "loading": "Loading",
@@ -354,6 +363,32 @@
             "key_not_changed": "Please change the key to something else.",
             "delete_confirm": "Delete field {{name}}?",
             "delete_confirm_description": "This will delete the field and all associated data for all entities."
+        },
+        "importexport": {
+            "tab": "Import/Export",
+            "export": {
+                "title": "Export Data",
+                "description": "Export your data to a file for backup or data analysis. Select the format (CSV or JSON) and click the export button for the data you want to download.",
+                "format": "Export Format",
+                "spools": "Export Spools",
+                "filaments": "Export Filaments",
+                "vendors": "Export Manufacturers",
+                "export": "Export"
+            },
+            "import": {
+                "title": "Import Data",
+                "description": "Import data from previously exported CSV or JSON files. Select a file for each resource type you want to import.",
+                "selectFile": "Select File",
+                "spools": "Import Spools",
+                "filaments": "Import Filaments",
+                "vendors": "Import Manufacturers"
+            },
+            "bulkImportFilaments": {
+                "title": "Bulk Import Filaments",
+                "description": "Select multiple filaments from the external database to import them all at once.",
+                "noResults": "All available filaments have already been imported or don't match your filters.",
+                "noFilaments": "No filaments found"
+            }
         }
     },
     "documentTitle": {

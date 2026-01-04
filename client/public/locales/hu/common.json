@@ -161,7 +161,9 @@
         "unArchive": "Arhiválás visszavonása",
         "clone": "Másolás",
         "clear": "Törlés",
-        "saveAndAdd": "Mentés és hozzáadás"
+        "saveAndAdd": "Mentés és hozzáadás",
+        "min": "Min",
+        "max": "Max"
     },
     "filament": {
         "fields_help": {
@@ -258,7 +260,9 @@
         "deleteError": "Hiba a(z) {{resource}} törlésekor (hibakód: {{statusCode}})",
         "createSuccess": "Sikeresen létrehozva {{resource}}",
         "saveSuccessful": "Sikeres mentés!",
-        "validationError": "Validációs hiba:{{error}}"
+        "validationError": "Validációs hiba:{{error}}",
+        "selectAtLeastOne": "Válasszon ki legalább egy filamentet.",
+        "filaments": "Filament(ek)"
     },
     "no": "Nem",
     "unknown": "Ismeretlen",
@@ -327,6 +331,32 @@
                 "label": "Pénznem"
             },
             "tab": "Általános"
+        },
+        "importexport": {
+            "tab": "Import/Export",
+            "export": {
+                "title": "Adat Export",
+                "description": "Az adataidat egy fájlba kell exportálnod biztonsági mentéshez vagy adatelemzéshez. Válassza ki a formátumot (CSV vagy JSON) és kattintson az exportálás gombra a letölteni kívánt adatokhoz.",
+                "format": "Export Formátum",
+                "spools": "Tekercsek exportálása",
+                "filaments": "Filamentek exportálása",
+                "vendors": "Gyártók exportálása",
+                "export": "Exportálás"
+            },
+            "import": {
+                "title": "Adat Import",
+                "description": "Importálj adatokat korábban exportált CSV vagy JSON fájlokból. Válassz egy fájlt minden olyan erőforrástípushoz, amelyet importálni szeretnél.",
+                "selectFile": "Fájl kiválasztása",
+                "spools": "Tekercsek importálása",
+                "filaments": "Filamentek importálása",
+                "vendors": "Gyártók importálása"
+            },
+            "bulkImportFilaments": {
+                "title": "Filamentek tömeges importálása",
+                "description": "Válassz ki több filamentet a külső adatbázisból, hogy mindegyiket egyszerre importáld.",
+                "noResults": "Minden elérhető filament már importálva van, vagy nem felel meg az Ön szűrőinek.",
+                "noFilaments": "Nem találhatók filamentek"
+            }
         }
     }
 }

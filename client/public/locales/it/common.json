@@ -212,7 +212,9 @@
         "clone": "Clona",
         "clear": "Pulisci",
         "saveAndAdd": "Salva e aggiungi",
-        "continue": "Continua"
+        "continue": "Continua",
+        "min": "Min",
+        "max": "Max"
     },
     "filament": {
         "fields_help": {
@@ -322,7 +324,9 @@
         "deleteError": "Error nella cancellazione di {{resource}} (status code: {{statusCode}})",
         "createSuccess": "{{resource}} creata correttamente",
         "saveSuccessful": "Salvataggio completato!",
-        "validationError": "Errore di convalida: {{error}}"
+        "validationError": "Errore di convalida: {{error}}",
+        "selectAtLeastOne": "Seleziona almeno un filamento.",
+        "filaments": "Filamento(i)"
     },
     "no": "No",
     "unknown": "Sconosciuto",
@@ -400,6 +404,32 @@
             "round_prices": {
                 "label": "Prezzi arrotondati",
                 "tooltip": "Prezzi arrotondati al numero intero più vicino."
+            }
+        },
+        "importexport": {
+            "tab": "Importa/Esporta",
+            "export": {
+                "title": "Esporta dati",
+                "description": "Esporta i tuoi dati in un file per il backup o l'analisi dei dati. Seleziona il formato (CSV o JSON) e fai clic sul pulsante di esportazione per i dati che desideri scaricare.",
+                "format": "Formato di esportazione",
+                "spools": "Esporta bobine",
+                "filaments": "Esporta filamenti",
+                "vendors": "Esporta produttori",
+                "export": "Esporta"
+            },
+            "import": {
+                "title": "Importa dati",
+                "description": "Importa dati da file CSV o JSON precedentemente esportati. Seleziona un file per ogni tipo di risorsa che desideri importare.",
+                "selectFile": "Seleziona file",
+                "spools": "Importa bobine",
+                "filaments": "Importa filamenti",
+                "vendors": "Importa produttori"
+            },
+            "bulkImportFilaments": {
+                "title": "Importazione in blocco di filamenti",
+                "description": "Seleziona più filamenti dal database esterno per importarli tutti in una volta.",
+                "noResults": "Tutti i filamenti disponibili sono già stati importati o non corrispondono ai tuoi filtri.",
+                "noFilaments": "Nessun filamento trovato"
             }
         }
     },

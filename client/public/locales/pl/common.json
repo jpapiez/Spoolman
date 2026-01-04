@@ -29,7 +29,9 @@
         "hideColumns": "Edytuj kolumny",
         "clearFilters": "Wyczyść filtry",
         "saveAndAdd": "Zapisz i dodaj",
-        "continue": "Kontynuuj"
+        "continue": "Kontynuuj",
+        "min": "Min",
+        "max": "Maks"
     },
     "spool": {
         "titles": {
@@ -112,7 +114,9 @@
         "error": "Błąd (kod statusu: {{statusCode}})",
         "createError": "Wystąpił błąd podczas tworzenia {{resource}} (kod statusu: {{statusCode}})",
         "saveSuccessful": "Pomyślnie zapisano!",
-        "validationError": "Błąd walidacji: {{error}}"
+        "validationError": "Błąd walidacji: {{error}}",
+        "selectAtLeastOne": "Proszę wybrać co najmniej jedno włókno.",
+        "filaments": "Włókna"
     },
     "loading": "Wczytywanie",
     "version": "Wersja",
@@ -401,7 +405,33 @@
             "delete_confirm": "Usunąć pole {{name}}?",
             "delete_confirm_description": "Ta akcja usunie wszystkie pola i powiązane z nimi dane dla wszystkich obiektów."
         },
-        "header": "Ustawienia"
+        "header": "Ustawienia",
+        "importexport": {
+            "tab": "Import/Eksport",
+            "export": {
+                "title": "Eksport danych",
+                "description": "Eksportuj swoje dane do pliku w celu tworzenia kopii zapasowej lub analizy danych. Wybierz format (CSV lub JSON) i kliknij przycisk eksportu dla danych, które chcesz pobrać.",
+                "format": "Format eksportu",
+                "spools": "Eksportuj szpule",
+                "filaments": "Eksportuj filamenty",
+                "vendors": "Eksportuj producentów",
+                "export": "Eksportuj"
+            },
+            "import": {
+                "title": "Import danych",
+                "description": "Importuj dane z wcześniej wyeksportowanych plików CSV lub JSON. Wybierz plik dla każdego typu zasobu, który chcesz zaimportować.",
+                "selectFile": "Wybierz plik",
+                "spools": "Importuj szpule",
+                "filaments": "Importuj filamenty",
+                "vendors": "Importuj producentów"
+            },
+            "bulkImportFilaments": {
+                "title": "Masowy import filamentów",
+                "description": "Wybierz wiele filamentów z zewnętrznej bazy danych, aby zaimportować je jednocześnie.",
+                "noResults": "Wszystkie dostępne filamenty zostały już zaimportowane lub nie pasują do Twoich filtrów.",
+                "noFilaments": "Nie znaleziono filamentów"
+            }
+        }
     },
     "locations": {
         "locations": "Lokalizacje",

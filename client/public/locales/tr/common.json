@@ -29,7 +29,9 @@
         "showArchived": "Arşivlenenleri göster",
         "notAccessTitle": "Erişim için yetkiniz bulunmamakta",
         "hideColumns": "Sütunları gizle",
-        "clearFilters": "Filtreleri temizle"
+        "clearFilters": "Filtreleri temizle",
+        "min": "Min",
+        "max": "Maks"
     },
     "warnWhenUnsavedChanges": "Çıkmak istediğinizden emin misiniz? Kaydedilmemiş değişiklikleriniz bulunmakta.",
     "notifications": {
@@ -44,7 +46,9 @@
         "editError": "{{resource}} düzenlenirken hata ile karşılaşıldı(durum kodu:{{statusCode}})",
         "importProgress": "İçe aktarılıyor: {{processed}}/{{total}}",
         "saveSuccessful": "Kayıt başarılı!",
-        "validationError": "Form kontrol hatası: {{error}}"
+        "validationError": "Form kontrol hatası: {{error}}",
+        "selectAtLeastOne": "Lütfen en az bir filament seçiniz.",
+        "filaments": "Filament(ler)"
     },
     "kofi": "Ko-fi'den bana birşeyler ateşle",
     "loading": "Yükleniyor",
@@ -354,6 +358,32 @@
             "key_not_changed": "Lütfen anahtarı başka bir şeyle değiştirin.",
             "delete_confirm": "{{name}} alanı silinsin mi?",
             "delete_confirm_description": "Bu işlem alanı ve ona bağlı tüm varlıkların verilerini silecektir."
+        },
+        "importexport": {
+            "tab": "İçe Aktar/Dışa Aktar",
+            "export": {
+                "title": "Verileri Dışa Aktar",
+                "description": "Verilerinizi yedekleme veya veri analizi için bir dosyaya dışa aktarın. Biçimi seçin (CSV veya JSON) ve indirmek istediğiniz veriler için dışa aktar düğmesine tıklayın.",
+                "format": "Dışa Aktarma Biçimi",
+                "spools": "Makaraları Dışa Aktar",
+                "filaments": "Filamentleri Dışa Aktar",
+                "vendors": "Üreticileri Dışa Aktar",
+                "export": "Dışa Aktar"
+            },
+            "import": {
+                "title": "Verileri İçe Aktar",
+                "description": "Daha önce dışa aktarılmış CSV veya JSON dosyalarından veri içe aktarın. İçe aktarmak istediğiniz her kaynak tipi için bir dosya seçin.",
+                "selectFile": "Dosya Seç",
+                "spools": "Makaraları İçe Aktar",
+                "filaments": "Filamentleri İçe Aktar",
+                "vendors": "Üreticileri İçe Aktar"
+            },
+            "bulkImportFilaments": {
+                "title": "Filamentleri Toplu İçe Aktar",
+                "description": "Dış veritabanından birden fazla filament seçerek hepsini aynı anda içe aktarın.",
+                "noResults": "Mevcut tüm filamentler zaten içe aktarıldı veya filtrelerinize uymuyor.",
+                "noFilaments": "Filament bulunamadı"
+            }
         }
     },
     "documentTitle": {

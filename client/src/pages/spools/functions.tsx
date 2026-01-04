@@ -201,7 +201,7 @@ export function useSpoolAdjustModal() {
 
   const [curSpool, setCurSpool] = useState<ISpool | null>(null);
   const [measurementType, setMeasurementType] = useState<MeasurementType>("length");
-  const inputNumberRef = useRef<HTMLInputElement | null>(null);
+  const inputNumberRef = useRef<any>(null);
 
   const openSpoolAdjustModal = useCallback((spool: ISpool) => {
     setCurSpool(spool);

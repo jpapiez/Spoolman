@@ -29,7 +29,9 @@
         "showArchived": "Mostrar Arquivados",
         "notAccessTitle": "Você não tem permissão para acessar",
         "hideColumns": "Ocultar Colunas",
-        "clearFilters": "Limpar Filtros"
+        "clearFilters": "Limpar Filtros",
+        "min": "Min",
+        "max": "Máx"
     },
     "warnWhenUnsavedChanges": "Você tem certeza que deseja sair? Você tem alterações não salvas.",
     "notifications": {
@@ -44,7 +46,9 @@
         "editError": "Erro ao editar {{resource}} (código de status: {{statusCode}})",
         "importProgress": "Importando: {{processed}}/{{total}}",
         "saveSuccessful": "Salvo com sucesso!",
-        "validationError": "Erro de validação: {{error}}"
+        "validationError": "Erro de validação: {{error}}",
+        "selectAtLeastOne": "Por favor selecione pelo menos um filamento.",
+        "filaments": "Filamento(s)"
     },
     "kofi": "Doe pelo Ko-fi",
     "loading": "Carregando",
@@ -355,6 +359,32 @@
             "key_not_changed": "Por favor, escolha outra chave.",
             "delete_confirm": "Apagar o campo {{name}}?",
             "delete_confirm_description": "Isso excluirá o campo e todos os dados associados em todas as entidades."
+        },
+        "importexport": {
+            "tab": "Importar/Exportar",
+            "export": {
+                "title": "Exportar Dados",
+                "description": "Exporte seus dados para um arquivo para backup ou análise. Selecione o formato (CSV ou JSON) e clique em Exportar para baixar os dados.",
+                "format": "Formato de Exportação",
+                "spools": "Exportar Carretéis",
+                "filaments": "Exportar Filamentos",
+                "vendors": "Exportar Fabricantes",
+                "export": "Exportar"
+            },
+            "import": {
+                "title": "Importar Dados",
+                "description": "Importe dados de arquivos CSV ou JSON previamente exportados. Selecione um arquivo para cada tipo de recurso que deseja importar.",
+                "selectFile": "Selecionar Arquivo",
+                "spools": "Importar Carretéis",
+                "filaments": "Importar Filamentos",
+                "vendors": "Importar Fabricantes"
+            },
+            "bulkImportFilaments": {
+                "title": "Importação em Massa de Filamentos",
+                "description": "Selecione múltiplos filamentos do banco de dados externo para importá-los todos de uma vez.",
+                "noResults": "Todos os filamentos disponíveis já foram importados ou não correspondem aos seus filtros.",
+                "noFilaments": "Nenhum filamento encontrado"
+            }
         }
     },
     "documentTitle": {

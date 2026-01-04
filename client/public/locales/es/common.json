@@ -29,7 +29,9 @@
         "hideColumns": "Ocultar Columnas",
         "clearFilters": "Borrar filtros",
         "saveAndAdd": "Guardar y añadir",
-        "continue": "Continuar"
+        "continue": "Continuar",
+        "min": "Min",
+        "max": "Max"
     },
     "warnWhenUnsavedChanges": "¿Estás seguro que quieres salir? Hay cambios sin guardar.",
     "notifications": {
@@ -44,7 +46,9 @@
         "editError": "Error al editar {{resource}} (status code: {{statusCode}})",
         "importProgress": "Importando: {{processed}}/{{total}}",
         "saveSuccessful": "¡Se guardo correctamente!",
-        "validationError": "Error de validación: {{error}}"
+        "validationError": "Error de validación: {{error}}",
+        "selectAtLeastOne": "Por favor, selecciona al menos un filamento.",
+        "filaments": "Filamento(s)"
     },
     "loading": "Cargando",
     "version": "Versión",
@@ -400,6 +404,32 @@
             "delete_confirm": "¿Borrar campo {{name}}?",
             "delete_confirm_description": "Esto eliminará el campo y todos los datos asociados para todas las entidades.",
             "description": "<p> Aquí puede agregar más campos personalizados a los asuntos.</p><p> Una vez que se agrega un campo, no puede cambiar su clave o tipo, y no puede eliminar opciones ni cambiar el estado de múltiples opciones para campos seleccionados. Si elimina un campo, se eliminarán los datos asociados a todos los sujetos.</p><p> La forma en que otros programas leen/escriben los datos es clave, por lo que si su campo personalizado se va a integrar con un programa de terceros, asegúrese de que esté configurado correctamente. El valor predeterminado solo se utilizará para elementos nuevos.</p><p> Los campos de salida no se pueden ordenar ni filtrar en las vistas de tabla.</p>"
+        },
+        "importexport": {
+            "tab": "Importar/Exportar",
+            "export": {
+                "title": "Exportar datos",
+                "description": "Exporta tus datos a un archivo para hacer una copia de seguridad o análisis de datos. Selecciona el formato (CSV o JSON) y haz clic en el botón de exportación para los datos que deseas descargar.",
+                "format": "Formato de exportación",
+                "spools": "Exportar bobinas",
+                "filaments": "Exportar filamentos",
+                "vendors": "Export Manufacturers",
+                "export": "Exportar"
+            },
+            "import": {
+                "title": "Importar datos",
+                "description": "Importa datos desde archivos CSV o JSON exportados anteriormente. Selecciona un archivo para cada tipo de recurso que deseas importar.",
+                "selectFile": "Seleccionar archivo",
+                "spools": "Importar bobinas",
+                "filaments": "Importar filamentos",
+                "vendors": "Importar fabricantes"
+            },
+            "bulkImportFilaments": {
+                "title": "Importación en masa de filamentos",
+                "description": "Selecciona varios filamentos de la base de datos externa para importarlos todos a la vez.",
+                "noResults": "Todos los filamentos disponibles ya han sido importados o no coinciden con tus filtros.",
+                "noFilaments": "No se encontraron filamentos"
+            }
         },
         "settings": "Ajustes"
     },

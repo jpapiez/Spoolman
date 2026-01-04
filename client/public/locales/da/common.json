@@ -178,7 +178,9 @@
         "unArchive": "Fjern fra arkiv",
         "clone": "Klon",
         "clear": "Ryd",
-        "saveAndAdd": "Gem og Tilføj"
+        "saveAndAdd": "Gem og Tilføj",
+        "min": "Min",
+        "max": "Maks"
     },
     "filament": {
         "fields_help": {
@@ -288,7 +290,9 @@
         "deleteError": "Fejl ved sletning af {{resource}} (status kode: {{statusCode}})",
         "createSuccess": "Oprettelse af {{resource}} lykkedes",
         "saveSuccessful": "Gemt!",
-        "validationError": "Kunne ikke gennemføres: {{error}}"
+        "validationError": "Kunne ikke gennemføres: {{error}}",
+        "selectAtLeastOne": "Vælg mindst et filament.",
+        "filaments": "Filament(er)"
     },
     "no": "Nej",
     "unknown": "Ukendt",
@@ -356,6 +360,32 @@
             "key_not_changed": "Ændr venligst nøglen til noget andet.",
             "delete_confirm": "Slet felt: {{name}}?",
             "delete_confirm_description": "Dette vil slette feltet samt alle associerede data for alle poster."
+        },
+        "importexport": {
+            "tab": "Import/Eksport",
+            "export": {
+                "title": "Eksporter data",
+                "description": "Eksporter dine data til en fil til sikkerhedskopiering eller dataanalyse. Vælg format (CSV eller JSON) og klik på eksportknappen for de data, du vil downloade.",
+                "format": "Eksportformat",
+                "spools": "Eksporter spoler",
+                "filaments": "Eksporter filamenter",
+                "vendors": "Eksporter producenter",
+                "export": "Eksporter"
+            },
+            "import": {
+                "title": "Importer data",
+                "description": "Importer data fra tidligere eksporterede CSV- eller JSON-filer. Vælg en fil for hver ressourcetype, du vil importere.",
+                "selectFile": "Vælg fil",
+                "spools": "Importer spoler",
+                "filaments": "Importer filamenter",
+                "vendors": "Importer producenter"
+            },
+            "bulkImportFilaments": {
+                "title": "Masseimport af filamenter",
+                "description": "Vælg flere filamenter fra den eksterne database for at importere dem alle på en gang.",
+                "noResults": "Alle tilgængelige filamenter er allerede importeret eller matcher ikke dine filtre.",
+                "noFilaments": "Ingen filamenter fundet"
+            }
         },
         "settings": "Indstillinger"
     }

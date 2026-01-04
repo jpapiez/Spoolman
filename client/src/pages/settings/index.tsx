@@ -1,4 +1,4 @@
-import { FileOutlined, HighlightOutlined, SolutionOutlined, ToolOutlined, UserOutlined } from "@ant-design/icons";
+import { FileOutlined, HighlightOutlined, ImportOutlined, SolutionOutlined, ToolOutlined, UserOutlined } from "@ant-design/icons";
 import { IResourceComponentsProps, useTranslate } from "@refinedev/core";
 import { Menu, theme } from "antd";
 import { Content } from "antd/es/layout/layout";
@@ -6,8 +6,10 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import React from "react";
 import { Route, Routes, useNavigate } from "react-router";
+import { BulkImportFilaments } from "./bulkImportFilaments";
 import { ExtraFieldsSettings } from "./extraFieldsSettings";
 import { GeneralSettings } from "./generalSettings";
+import { ImportExportSettings } from "./importExportSettings";
 
 dayjs.extend(utc);
 
@@ -80,6 +82,8 @@ export const Settings: React.FC<IResourceComponentsProps> = () => {
                 },
               ],
             },
+            { key: "importexport", label: t("settings.importexport.tab"), icon: <ImportOutlined /> },
+            { key: "bulkimport", label: "Bulk Import Filaments", icon: <ImportOutlined /> },
           ]}
           style={{
             marginBottom: "1em",
@@ -89,6 +93,8 @@ export const Settings: React.FC<IResourceComponentsProps> = () => {
           <Routes>
             <Route index element={<GeneralSettings />} />
             <Route path="/extra/:entityType" element={<ExtraFieldsSettings />} />
+            <Route path="/importexport" element={<ImportExportSettings />} />
+            <Route path="/bulkimport" element={<BulkImportFilaments />} />
           </Routes>
         </main>
       </Content>

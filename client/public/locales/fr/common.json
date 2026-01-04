@@ -212,7 +212,9 @@
         "clone": "Cloner",
         "clear": "Effacer",
         "saveAndAdd": "Sauvegarder et ajouter",
-        "continue": "Continuer"
+        "continue": "Continuer",
+        "min": "Min",
+        "max": "Max"
     },
     "filament": {
         "fields_help": {
@@ -297,7 +299,9 @@
         "deleteError": "Erreur lors de la suppression de {{resource}} (status code : {{statusCode}})",
         "createSuccess": "Création réussie de {{resource}}",
         "saveSuccessful": "Sauvegarde réussie !",
-        "validationError": "Erreur de validation : {{error}}"
+        "validationError": "Erreur de validation : {{error}}",
+        "selectAtLeastOne": "Veuillez sélectionner au moins un filament.",
+        "filaments": "Filament(s)"
     },
     "no": "Non",
     "unknown": "Inconnu",
@@ -395,6 +399,32 @@
             "base_url": {
                 "label": "Base de l'URL",
                 "tooltip": "La base de l'URL à utiliser lors de la génération de QR codes."
+            }
+        },
+        "importexport": {
+            "tab": "Import/Export",
+            "export": {
+                "title": "Exporter les données",
+                "description": "Exportez vos données dans un fichier pour une sauvegarde ou une analyse des données. Sélectionnez le format (CSV ou JSON) et cliquez sur le bouton d'exportation pour les données que vous souhaitez télécharger.",
+                "format": "Format d'exportation",
+                "spools": "Exporter les bobines",
+                "filaments": "Exporter les filaments",
+                "vendors": "Exporter les fabricants",
+                "export": "Exporter"
+            },
+            "import": {
+                "title": "Importer les données",
+                "description": "Importez les données depuis les fichiers CSV ou JSON précédemment exportés. Sélectionnez un fichier pour chaque type de ressource que vous souhaitez importer.",
+                "selectFile": "Sélectionner le fichier",
+                "spools": "Importer les bobines",
+                "filaments": "Importer les filaments",
+                "vendors": "Importer les fabricants"
+            },
+            "bulkImportFilaments": {
+                "title": "Importer en masse les filaments",
+                "description": "Sélectionnez plusieurs filaments de la base de données externe pour les importer tous à la fois.",
+                "noResults": "Tous les filaments disponibles ont déjà été importés ou ne correspondent pas à vos filtres.",
+                "noFilaments": "Aucun filament trouvé"
             }
         }
     },

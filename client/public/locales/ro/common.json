@@ -22,7 +22,9 @@
         "notAccessTitle": "nu ai permisiune de acces",
         "hideColumns": "ascunde coloane",
         "clearFilters": "reseteaza filtre",
-        "continue": "Continua"
+        "continue": "Continua",
+        "min": "Min",
+        "max": "Max"
     },
     "actions": {
         "create": "creaza",
@@ -44,7 +46,9 @@
         "editError": "eroare la editarea {{resource}} (status code: {{statusCode}})",
         "importProgress": "Importare: {{processed}}/{{total}}",
         "saveSuccessful": "Salvare reusita!",
-        "validationError": "Eroare de validare: {{error}}"
+        "validationError": "Eroare de validare: {{error}}",
+        "selectAtLeastOne": "Vă rugăm selectați cel puțin un filament.",
+        "filaments": "Filament(e)"
     },
     "kofi": "Doneaza pe Ko-fi",
     "loading": "Incarca",
@@ -401,6 +405,32 @@
             "key_not_changed": "Te rog să schimbi cheia.",
             "delete_confirm": "Ștergi câmpul{{name}}?",
             "delete_confirm_description": "Ștergerea câmpului și a tuturor datelor asociate pentru toate entitățile."
+        },
+        "importexport": {
+            "tab": "Import/Export",
+            "export": {
+                "title": "Exportă datele",
+                "description": "Exportă datele tale într-un fișier pentru backup sau analiză de date. Selectează formatul (CSV sau JSON) și fă click pe butonul de export pentru datele pe care vrei să le descarci.",
+                "format": "Format export",
+                "spools": "Exportă role",
+                "filaments": "Exportă filament",
+                "vendors": "Exportă producători",
+                "export": "Exportă"
+            },
+            "import": {
+                "title": "Importă date",
+                "description": "Importă date din fișiere CSV sau JSON exportate anterior. Selectează un fișier pentru fiecare tip de resursă pe care vrei să o imporți.",
+                "selectFile": "Selectează fișier",
+                "spools": "Importă role",
+                "filaments": "Importă filament",
+                "vendors": "Importă producători"
+            },
+            "bulkImportFilaments": {
+                "title": "Import în masă de filament",
+                "description": "Selectează mai multe filamente din baza de date externă pentru a le importa toate odată.",
+                "noResults": "Toate filamentele disponibile au fost deja importate sau nu coincid cu filtrele tale.",
+                "noFilaments": "Nu s-au găsit filamente"
+            }
         }
     },
     "locations": {
