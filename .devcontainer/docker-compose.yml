@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  dev:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    container_name: spoolman-dev
+    volumes:
+      - ..:/workspace
+      - vscode-extensions:/home/vscode/.vscode-server/extensions
+      - pdm-cache:/home/vscode/.cache/pdm
+      - npm-cache:/home/vscode/.npm
+    ports:
+      - "8000:8000"  # FastAPI backend
+      - "5173:5173"  # Vite dev server
+    environment:
+      - DATABASE_URL=sqlite:////workspace/spoolman.db
+    networks:
+      - spoolman-dev
+    command: /bin/bash -c "while sleep 1000; do :; done"
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: spoolman-postgres
+    environment:
+      POSTGRES_DB: spoolman
+      POSTGRES_USER: spoolman
+      POSTGRES_PASSWORD: spoolman
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - spoolman-dev
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U spoolman"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mariadb:
+    image: mariadb:latest
+    container_name: spoolman-mariadb
+    environment:
+      MYSQL_DATABASE: spoolman
+      MYSQL_USER: spoolman
+      MYSQL_PASSWORD: spoolman
+      MYSQL_ROOT_PASSWORD: spoolman
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    networks:
+      - spoolman-dev
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  vscode-extensions:
+  pdm-cache:
+  npm-cache:
+  postgres-data:
+  mariadb-data:
+
+networks:
+  spoolman-dev:
+    driver: bridge

@@ -1,0 +1,71 @@
+{
+	"name": "Spoolman Development",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "dev",
+	"workspaceFolder": "/workspace",
+	"remoteUser": "vscode",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": "/usr/local/bin/python",
+				"python.linting.enabled": true,
+				"python.linting.pylintEnabled": false,
+				"python.linting.ruffEnabled": true,
+				"python.formatting.provider": "black",
+				"python.analysis.typeCheckingMode": "basic",
+				"[python]": {
+					"editor.formatOnSave": true,
+					"editor.codeActionsOnSave": {
+						"source.fixAll.ruff": "explicit",
+						"source.organizeImports.ruff": "explicit"
+					}
+				},
+				"[typescript]": {
+					"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+					"editor.formatOnSave": true,
+					"editor.codeActionsOnSave": {
+						"source.fixAll.eslint": "explicit"
+					}
+				},
+				"[typescriptreact]": {
+					"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+					"editor.formatOnSave": true,
+					"editor.codeActionsOnSave": {
+						"source.fixAll.eslint": "explicit"
+					}
+				},
+				"eslint.validate": ["javascript", "typescript", "typescriptreact"],
+				"npm.autoDetect": "on"
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"charliermarsh.ruff",
+				"ms-python.debugpy",
+				"ms-vscode.makefile-tools",
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"ms-vscode.docker",
+				"eamodio.gitlens",
+				"GitHub.copilot"
+			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	"forwardPorts": [8000, 5173],
+	"portsAttributes": {
+		"8000": {
+			"label": "Backend API",
+			"onAutoForward": "notify"
+		},
+		"5173": {
+			"label": "Frontend Dev Server",
+			"onAutoForward": "notify"
+		}
+	},
+	"postCreateCommand": "bash .devcontainer/init.sh",
+	"postStartCommand": "bash .devcontainer/start.sh"
+}
