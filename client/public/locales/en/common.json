@@ -371,9 +371,9 @@
                 "description": "Export your data to a file for backup or data analysis. Select the format (CSV or JSON) and click the export button for the data you want to download.",
                 "format": "Export Format",
                 "spools": "Export Spools",
-                "filaments": "Export Filaments",
-                "vendors": "Export Manufacturers",
-                "export": "Export"
+                    "filaments": "Export Filaments",
+                    "vendors": "Export Manufacturers",
+                    "export": "Export"
             },
             "import": {
                 "title": "Import Data",
