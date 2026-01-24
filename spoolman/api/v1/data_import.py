@@ -8,16 +8,15 @@ from fastapi import APIRouter, Depends, HTTPException, UploadFile
 from pydantic import BaseModel, Field
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from spoolman.database.database import get_db_session
-from spoolman.import_data import (
-    ImportError,
-    ImportResult,
+from spoolman.data_import import (
+    ImportDataError,
     import_filaments,
     import_spools,
     import_vendors,
     parse_csv,
     parse_json,
 )
+from spoolman.database.database import get_db_session
 
 logger = logging.getLogger(__name__)
 
@@ -53,10 +52,9 @@ async def _detect_format(filename: str) -> FileFormat:
     """Detect file format from filename."""
     if filename.endswith(".csv"):
         return FileFormat.CSV
-    elif filename.endswith(".json"):
+    if filename.endswith(".json"):
         return FileFormat.JSON
-    else:
-        raise ValueError("Unsupported file format. Use .csv or .json files.")
+    raise ValueError("Unsupported file format. Use .csv or .json files.")
 
 
 async def _do_import(
@@ -73,7 +71,7 @@ async def _do_import(
         elif file_format == FileFormat.JSON:
             data = parse_json(content)
         else:
-            raise ImportError(f"Unsupported format: {file_format}")
+            raise ImportDataError(f"Unsupported format: {file_format}")  # noqa: TRY301
 
         # Import based on resource type
         if resource == "vendors":
@@ -83,7 +81,7 @@ async def _do_import(
         elif resource == "spools":
             result = await import_spools(db, data)
         else:
-            raise ImportError(f"Unknown resource type: {resource}")
+            raise ImportDataError(f"Unknown resource type: {resource}")  # noqa: TRY301
 
         # Convert result to response
         return ImportResponse(
@@ -92,19 +90,18 @@ async def _do_import(
             errors=[ImportItemError(row=e["row"], error=e["error"]) for e in result.errors],
         )
 
-    except ImportError as e:
-        logger.error(f"Import error: {e}")
-        raise HTTPException(status_code=400, detail=str(e))
+    except ImportDataError as e:
+        logger.exception("Import error")
+        raise HTTPException(status_code=400, detail=str(e)) from e
     except Exception as e:
-        logger.error(f"Unexpected error during import: {e}")
-        raise HTTPException(status_code=500, detail=f"Unexpected error: {str(e)}")
+        logger.exception("Unexpected error during import")
+        raise HTTPException(status_code=500, detail=f"Unexpected error: {e!s}") from e
 
 
 @router.post(
     "/vendors",
     name="Import vendors",
     description="Import vendors from a CSV or JSON file.",
-    response_model=ImportResponse,
 )
 async def import_vendors_endpoint(
     *,
@@ -122,14 +119,13 @@ async def import_vendors_endpoint(
 
         return await _do_import(db, "vendors", text_content, file_format)
     except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+        raise HTTPException(status_code=400, detail=str(e)) from e
 
 
 @router.post(
     "/filaments",
     name="Import filaments",
     description="Import filaments from a CSV or JSON file.",
-    response_model=ImportResponse,
 )
 async def import_filaments_endpoint(
     *,
@@ -147,14 +143,13 @@ async def import_filaments_endpoint(
 
         return await _do_import(db, "filaments", text_content, file_format)
     except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+        raise HTTPException(status_code=400, detail=str(e)) from e
 
 
 @router.post(
     "/spools",
     name="Import spools",
     description="Import spools from a CSV or JSON file.",
-    response_model=ImportResponse,
 )
 async def import_spools_endpoint(
     *,
@@ -172,4 +167,4 @@ async def import_spools_endpoint(
 
         return await _do_import(db, "spools", text_content, file_format)
     except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+        raise HTTPException(status_code=400, detail=str(e)) from e

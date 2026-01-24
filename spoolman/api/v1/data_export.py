@@ -8,10 +8,10 @@ from typing import Annotated
 from fastapi import APIRouter, Depends, Response
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from spoolman.data_export import dump_as_csv, dump_as_json
 from spoolman.database import filament, spool, vendor
 from spoolman.database.database import get_db_session
 from spoolman.database.models import Base
-from spoolman.export import dump_as_csv, dump_as_json
 
 # ruff: noqa: D103,B008
 router = APIRouter(

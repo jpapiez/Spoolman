@@ -4,7 +4,7 @@ import csv
 import json
 import logging
 from io import StringIO
-from typing import Any, Optional
+from typing import Any
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -13,16 +13,15 @@ from spoolman.database import filament, spool, vendor
 logger = logging.getLogger(__name__)
 
 
-class ImportError(Exception):
+class ImportDataError(Exception):
     """Exception raised during import."""
-
-    pass
 
 
 class ImportResult:
     """Result of an import operation."""
 
-    def __init__(self):
+    def __init__(self) -> None:
+        """Initialize the import result."""
         self.created = 0
         self.failed = 0
         self.errors: list[dict[str, Any]] = []
@@ -37,19 +36,19 @@ def parse_csv(content: str) -> list[dict[str, Any]]:
     """Parse CSV content and return a list of dictionaries."""
     reader = csv.DictReader(StringIO(content))
     if reader.fieldnames is None:
-        raise ImportError("CSV file has no headers")
-    return [row for row in reader]
+        raise ImportDataError("CSV file has no headers")
+    return list(reader)
 
 
 def parse_json(content: str) -> list[dict[str, Any]]:
     """Parse JSON content and return a list of dictionaries."""
     data = json.loads(content)
     if not isinstance(data, list):
-        raise ImportError("JSON must contain an array of objects")
+        raise ImportDataError("JSON must contain an array of objects")
     return data
 
 
-def _parse_value(value: Any, field_type: str) -> Any:
+def _parse_value(value: Any, field_type: str) -> Any:  # noqa: ANN401, PLR0911
     """Parse a value to the appropriate type."""
     if value is None or value == "":
         return None
@@ -76,7 +75,7 @@ def _parse_value(value: Any, field_type: str) -> Any:
     return value
 
 
-def _extract_extra_fields(data: dict[str, Any], known_fields: set[str]) -> dict[str, str]:
+def _extract_extra_fields(data: dict[str, Any]) -> dict[str, str]:
     """Extract extra fields (fields starting with 'extra.') from the data."""
     extra = {}
     for key, value in data.items():
@@ -93,28 +92,18 @@ async def import_vendors(
     """Import vendors from a list of dictionaries."""
     result = ImportResult()
 
-    vendor_fields = {
-        "id",
-        "registered",
-        "name",
-        "comment",
-        "empty_spool_weight",
-        "external_id",
-    }
-
     for row_index, item_data in enumerate(data, 1):
         try:
             # Extract fields
-            vendor_id = item_data.get("id")
             name = item_data.get("name", "").strip()
             comment = item_data.get("comment")
             empty_spool_weight = _parse_value(item_data.get("empty_spool_weight"), "float")
             external_id = item_data.get("external_id")
-            extra = _extract_extra_fields(item_data, vendor_fields)
+            extra = _extract_extra_fields(item_data)
 
             # Validate required fields
             if not name:
-                raise ImportError("'name' is required")
+                raise ImportDataError("'name' is required")  # noqa: TRY301
 
             # Create vendor
             new_vendor = await vendor.create(
@@ -126,11 +115,11 @@ async def import_vendors(
                 extra=extra if extra else None,
             )
             result.created += 1
-            logger.info(f"Imported vendor: {new_vendor.name} (ID: {new_vendor.id})")
+            logger.info("Imported vendor: %s (ID: %s)", new_vendor.name, new_vendor.id)
 
-        except Exception as e:
+        except Exception as e:  # noqa: PERF203
             result.add_error(row_index, item_data, str(e))
-            logger.error(f"Error importing vendor at row {row_index}: {e}")
+            logger.exception("Error importing vendor at row %s", row_index)
 
     return result
 
@@ -141,28 +130,6 @@ async def import_filaments(
 ) -> ImportResult:
     """Import filaments from a list of dictionaries."""
     result = ImportResult()
-
-    filament_fields = {
-        "id",
-        "registered",
-        "name",
-        "vendor.id",
-        "vendor.name",
-        "material",
-        "price",
-        "density",
-        "diameter",
-        "weight",
-        "spool_weight",
-        "article_number",
-        "comment",
-        "settings_extruder_temp",
-        "settings_bed_temp",
-        "color_hex",
-        "multi_color_hexes",
-        "multi_color_direction",
-        "external_id",
-    }
 
     for row_index, item_data in enumerate(data, 1):
         try:
@@ -182,13 +149,13 @@ async def import_filaments(
             multi_color_hexes = item_data.get("multi_color_hexes")
             multi_color_direction = item_data.get("multi_color_direction")
             external_id = item_data.get("external_id")
-            extra = _extract_extra_fields(item_data, filament_fields)
+            extra = _extract_extra_fields(item_data)
 
             # Validate required fields
             if density is None:
-                raise ImportError("'density' is required")
+                raise ImportDataError("'density' is required")  # noqa: TRY301
             if diameter is None:
-                raise ImportError("'diameter' is required")
+                raise ImportDataError("'diameter' is required")  # noqa: TRY301
 
             # Handle vendor
             vendor_id = None
@@ -221,11 +188,11 @@ async def import_filaments(
                 extra=extra if extra else None,
             )
             result.created += 1
-            logger.info(f"Imported filament: {new_filament.name} (ID: {new_filament.id})")
+            logger.info("Imported filament: %s (ID: %s)", new_filament.name, new_filament.id)
 
-        except Exception as e:
+        except Exception as e:  # noqa: PERF203
             result.add_error(row_index, item_data, str(e))
-            logger.error(f"Error importing filament at row {row_index}: {e}")
+            logger.exception("Error importing filament at row %s", row_index)
 
     return result
 
@@ -236,25 +203,6 @@ async def import_spools(
 ) -> ImportResult:
     """Import spools from a list of dictionaries."""
     result = ImportResult()
-
-    spool_fields = {
-        "id",
-        "registered",
-        "first_used",
-        "last_used",
-        "price",
-        "filament.id",
-        "filament.name",
-        "filament.vendor.name",
-        "initial_weight",
-        "spool_weight",
-        "used_weight",
-        "remaining_weight",
-        "location",
-        "lot_nr",
-        "comment",
-        "archived",
-    }
 
     for row_index, item_data in enumerate(data, 1):
         try:
@@ -268,7 +216,7 @@ async def import_spools(
             lot_nr = item_data.get("lot_nr", "").strip() if item_data.get("lot_nr") else None
             comment = item_data.get("comment")
             archived = _parse_value(item_data.get("archived"), "bool")
-            extra = _extract_extra_fields(item_data, spool_fields)
+            extra = _extract_extra_fields(item_data)
 
             # Handle filament - try to match by name and vendor name
             filament_name = item_data.get("filament.name")
@@ -280,14 +228,12 @@ async def import_spools(
                 found_filaments, _ = await filament.find(db=db, name=filament_name)
                 if vendor_name:
                     # Filter by vendor name if provided
-                    found_filaments = [
-                        f for f in found_filaments if f.vendor and f.vendor.name == vendor_name
-                    ]
+                    found_filaments = [f for f in found_filaments if f.vendor and f.vendor.name == vendor_name]
                 if found_filaments:
                     filament_id = found_filaments[0].id
 
             if filament_id is None:
-                raise ImportError(f"Could not find filament: {filament_name}")
+                raise ImportDataError(f"Could not find filament: {filament_name}")  # noqa: TRY301
 
             # Create spool
             new_spool = await spool.create(
@@ -305,10 +251,10 @@ async def import_spools(
                 extra=extra if extra else None,
             )
             result.created += 1
-            logger.info(f"Imported spool ID: {new_spool.id}")
+            logger.info("Imported spool ID: %s", new_spool.id)
 
-        except Exception as e:
+        except Exception as e:  # noqa: PERF203
             result.add_error(row_index, item_data, str(e))
-            logger.error(f"Error importing spool at row {row_index}: {e}")
+            logger.exception("Error importing spool at row %s", row_index)
 
     return result
