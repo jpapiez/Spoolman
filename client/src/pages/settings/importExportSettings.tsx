@@ -1,6 +1,6 @@
 import { DownloadOutlined, UploadOutlined } from "@ant-design/icons";
 import { useTranslate } from "@refinedev/core";
-import { Button, Divider, Form, Radio, RadioChangeEvent, Space, Typography, Upload, message } from "antd";
+import { Button, Divider, Form, Radio, RadioChangeEvent, Typography, Upload, message } from "antd";
 import type { RcFile, UploadProps } from "antd/es/upload";
 import React, { useState } from "react";
 import { getAPIURL } from "../../utils/url";
@@ -98,19 +98,15 @@ export function ImportExportSettings(): React.ReactElement {
         messageApi.success(
           t("notifications.importSuccessful", {
             count: result.created,
-          })
+          }),
         );
       } else {
         const errorList = result.errors.map((e) => `Row ${e.row}: ${e.error}`).join("\n");
-        messageApi.warning(
-          `${result.created} items imported successfully, ${result.failed} failed:\n${errorList}`
-        );
+        messageApi.warning(`${result.created} items imported successfully, ${result.failed} failed:\n${errorList}`);
       }
     } catch (error) {
       console.error("Import error:", error);
-      messageApi.error(
-        error instanceof Error ? error.message : t("notifications.importFailed")
-      );
+      messageApi.error(error instanceof Error ? error.message : t("notifications.importFailed"));
     } finally {
       setLoading(false);
     }
@@ -121,8 +117,11 @@ export function ImportExportSettings(): React.ReactElement {
     accept: ".csv,.json",
     beforeUpload: (file) => {
       // Only allow CSV and JSON files
-      const isValidType = file.type === "text/csv" || file.type === "application/json" || 
-                         file.name.endsWith(".csv") || file.name.endsWith(".json");
+      const isValidType =
+        file.type === "text/csv" ||
+        file.type === "application/json" ||
+        file.name.endsWith(".csv") ||
+        file.name.endsWith(".json");
       if (!isValidType) {
         messageApi.error(t("notifications.invalidFileType"));
         return Upload.LIST_IGNORE;
@@ -154,10 +153,7 @@ export function ImportExportSettings(): React.ReactElement {
         <Paragraph>{t("settings.importexport.export.description")}</Paragraph>
 
         <Form.Item label={t("settings.importexport.export.format")}>
-          <Radio.Group
-            value={format}
-            onChange={(e: RadioChangeEvent) => setFormat(e.target.value as ExportFormat)}
-          >
+          <Radio.Group value={format} onChange={(e: RadioChangeEvent) => setFormat(e.target.value as ExportFormat)}>
             <Radio value="csv">CSV</Radio>
             <Radio value="json">JSON</Radio>
           </Radio.Group>
@@ -214,7 +210,7 @@ export function ImportExportSettings(): React.ReactElement {
 
         <Form.Item label={t("settings.importexport.import.filaments")}>
           <Upload {...createUploadProps("filaments")}>
-              <Button icon={<UploadOutlined />} loading={importingFilaments} style={{ width: "240px" }}>
+            <Button icon={<UploadOutlined />} loading={importingFilaments} style={{ width: "240px" }}>
               {t("settings.importexport.import.selectFile")}
             </Button>
           </Upload>
@@ -222,7 +218,7 @@ export function ImportExportSettings(): React.ReactElement {
 
         <Form.Item label={t("settings.importexport.import.vendors")}>
           <Upload {...createUploadProps("vendors")}>
-              <Button icon={<UploadOutlined />} loading={importingVendors} style={{ width: "240px" }}>
+            <Button icon={<UploadOutlined />} loading={importingVendors} style={{ width: "240px" }}>
               {t("settings.importexport.import.selectFile")}
             </Button>
           </Upload>

@@ -1,4 +1,11 @@
-import { FileOutlined, HighlightOutlined, ImportOutlined, SolutionOutlined, ToolOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  FileOutlined,
+  HighlightOutlined,
+  ImportOutlined,
+  SolutionOutlined,
+  ToolOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 import { useTranslate } from "@refinedev/core";
 import { Menu, theme } from "antd";
 import { Content } from "antd/es/layout/layout";

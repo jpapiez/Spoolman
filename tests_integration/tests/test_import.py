@@ -1,12 +1,13 @@
 """Integration tests for the Import API endpoint."""
 
+from typing import Any
+
 import httpx
-import pytest
 
 from ..conftest import URL
 
 
-def test_import_vendors_csv(random_vendor_mod):
+def test_import_vendors_csv(random_vendor_mod: dict[str, Any]) -> None:  # noqa: ARG001
     """Test importing vendors from CSV."""
     # Create CSV content with vendor data
     csv_content = """name,comment,empty_spool_weight
@@ -27,7 +28,7 @@ TestVendor2,,150.0
     assert len(data["errors"]) == 0
 
 
-def test_import_vendors_json(random_vendor_mod):
+def test_import_vendors_json(random_vendor_mod: dict[str, Any]) -> None:  # noqa: ARG001
     """Test importing vendors from JSON."""
     # Create JSON content with vendor data
     json_content = """[
@@ -48,7 +49,7 @@ def test_import_vendors_json(random_vendor_mod):
     assert len(data["errors"]) == 0
 
 
-def test_import_filaments_csv(random_vendor_mod):
+def test_import_filaments_csv(random_vendor_mod: dict[str, Any]) -> None:
     """Test importing filaments from CSV."""
     # Create CSV content with filament data
     csv_content = f"""name,vendor.name,material,density,diameter,weight,price
@@ -69,12 +70,15 @@ TestFilament2,{random_vendor_mod["name"]},ABS,1.04,1.75,1000.0,25.0
     assert len(data["errors"]) == 0
 
 
-def test_import_filaments_json(random_vendor_mod):
+def test_import_filaments_json(random_vendor_mod: dict[str, Any]) -> None:
     """Test importing filaments from JSON."""
     # Create JSON content with filament data
+    vendor_name = random_vendor_mod["name"]
     json_content = f"""[
-    {{"name": "JsonFilament1", "vendor.name": "{random_vendor_mod['name']}", "material": "PLA", "density": 1.24, "diameter": 1.75, "weight": 1000.0, "price": 20.5}},
-    {{"name": "JsonFilament2", "vendor.name": "{random_vendor_mod['name']}", "material": "ABS", "density": 1.04, "diameter": 1.75, "weight": 1000.0, "price": 25.0}}
+    {{"name": "JsonFilament1", "vendor.name": "{vendor_name}", "material": "PLA", \
+"density": 1.24, "diameter": 1.75, "weight": 1000.0, "price": 20.5}},
+    {{"name": "JsonFilament2", "vendor.name": "{vendor_name}", "material": "ABS", \
+"density": 1.04, "diameter": 1.75, "weight": 1000.0, "price": 25.0}}
 ]"""
 
     # Import filaments
@@ -90,7 +94,7 @@ def test_import_filaments_json(random_vendor_mod):
     assert len(data["errors"]) == 0
 
 
-def test_import_filaments_missing_required(random_vendor_mod):
+def test_import_filaments_missing_required(random_vendor_mod: dict[str, Any]) -> None:  # noqa: ARG001
     """Test importing filaments with missing required fields."""
     # Create CSV with missing required field (density)
     csv_content = """name,vendor.name,material,diameter
